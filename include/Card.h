@@ -1,19 +1,19 @@
-#ifndef Deck_H
-#define Deck_H
+#ifndef Card_H
+#define Card_H
 #include "player.h"
 
-class Deck
+class Card
 {
     public:
-        SDL_Surface *screen;
+        SDL_Surface *onscreen;
     //Le constructeur permettant l'initialisation des variables
-    Deck(SDL_Surface *window);
+    Card();
 
-    void loop();
+    void loop(SDL_Surface *screen);
 
     //montrer le personnage
 
     void show(SDL_Surface *screen, SDL_Surface *background,SDL_Event event);
 };
 
-#endif //Deck_H
+#endif //Card

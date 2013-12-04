@@ -15,6 +15,7 @@
 #include "include/player.h"
 #include "include/game.h"
 #include "include/deck.h"
+#include "include/card.h"
 
 #define FPS 50
 #define LARGEUR_FENETRE 800
@@ -265,15 +266,13 @@ int selection(int from){
                 }
             break;
         case 2 :
-            deck = new Deck();
-
-                    SDL_Flip(screen);
-                    SDL_BlitSurface( background, NULL, screen, &bg );
-                    SDL_BlitSurface( pcount, NULL, screen, &cursorl );
+            deck = new Deck(screen);
+            background = IMG_Load("img/deck.png");
             break;
         default:
 
                     SDL_Surface *test = NULL;
+                    Card *card;
                     SDL_Surface *card1 = NULL;
                     SDL_Surface *card1low = NULL;
                     test=load_image("img/test.png" );
@@ -282,6 +281,8 @@ int selection(int from){
 
                     card1low->h = 100;
                     card1low->w = 100;
+                    card = new Card();
+                    card->onscreen = screen;
 
                     if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )                    {                        return false;                    }
                     screen = SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_RESIZABLE );
@@ -295,6 +296,7 @@ int selection(int from){
                     SDL_BlitSurface(test, NULL, screen, &bg);
                     SDL_BlitSurface(card1, NULL, screen, &cursorl);
                     SDL_BlitSurface(card1low, NULL, screen, &bg);
+                    card->loop(screen);
                     while( SDL_PollEvent( &event ) )
                     {
                           switch(event.type)
@@ -357,6 +359,7 @@ int main( int argc, char* args[] )
     //ce qui va nous permettre de quitter
     bool quit = false;
 
+
     //Initialisation
     if( init() == false )
     {
@@ -397,7 +400,8 @@ int main( int argc, char* args[] )
     while( quit == false )
     {
         SDL_Flip(screen);
-        SDL_BlitSurface( background, NULL, screen, &bg );
+        if (background != NULL)
+            SDL_BlitSurface( background, NULL, screen, &bg );
         SDL_BlitSurface( launch, NULL, screen, &launchos );
         SDL_BlitSurface( lan, NULL, screen, &lanos );
         SDL_BlitSurface( opt, NULL, screen, &optos );
@@ -574,10 +578,6 @@ int game(int nbplayers)
         last_time = current_time;
 
         DrawGL(ecran);
-
-        if (deck != NULL) {
-            deck->loop(screen, background,event);
-        }
 
         stop_time = SDL_GetTicks();
         if ((stop_time - last_time) < time_per_frame)
