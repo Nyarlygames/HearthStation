@@ -14,84 +14,54 @@
 #define LARGEUR_FENETRE 800
 #define HAUTEUR_FENETRE 600
 
+SDL_Rect optos;
+SDL_Rect launchos;
+SDL_Rect lanos;
+SDL_Rect bg;
+SDL_Rect cursorl;
 
+SDL_Surface *cursord = NULL;
+SDL_Surface *launchd = NULL;
+SDL_Surface *land = NULL;
+SDL_Surface *optd = NULL;
 
-SDL_Event event2;
+SDL_Color textColord = { 200, 0, 0 };
+Deck::Deck(){
 
-Deck::Deck(SDL_Event event)
-{
+bool quit = false;
+    launchos.x = 50;
+    launchos.y = HAUTEUR_FENETRE/4;
+    lanos.x = 50;
+    lanos.y = HAUTEUR_FENETRE*2/4;
+    optos.x = 50;
+    optos.y = HAUTEUR_FENETRE*3/4;
 
-    event2 = event;
-}
-
-void Deck::loop(SDL_Surface *screen, SDL_Surface *background)
-{
-
+    bg.x = 0;
+    bg.y = 0;
+    cursorl.x = 20;
+    cursorl.y = HAUTEUR_FENETRE/4;
     TTF_Font *font;
-    TTF_Font *font2;
-    bool quit = false;
-    SDL_Rect bg;
-    SDL_Surface *pcount = NULL;
-    SDL_Rect cursorl;
+    font = TTF_OpenFont( "CaslonBold.ttf", 30 );
 
-while( quit == false )
-    {
-
-    SDL_Color textColor = { 100, 0, 0 };
-   // SDL_event event2;
-    cursorl.x = 20;
-    cursorl.y = HAUTEUR_FENETRE/4;
-    cursorl.x = 20;
-    cursorl.y = HAUTEUR_FENETRE/4;
-    pcount = TTF_RenderText_Solid( font, "HEARTHSTATION DECK", textColor );
-
-    font = TTF_OpenFont( "Gore Font II.ttf", 28 );
-    font2 = TTF_OpenFont( "brutal-tooth.ttf", 28 );
-        bg.x = 0;
-        bg.y = 0;
-        SDL_Flip(screen);
-        SDL_BlitSurface( background, NULL, screen, &bg );
-        SDL_BlitSurface( pcount, NULL, screen, &cursorl );
-        while( SDL_PollEvent( &event2 ) )
-        {
-              switch(event2.type)
-            {
-                case SDL_QUIT:
-                    quit = true;
-                break;
-                case SDL_KEYDOWN:
-                switch (event2.key.keysym.sym)
-                {
-                    case SDLK_KP1:
-                        pcount = TTF_RenderText_Solid( font2, "1", textColor );
-                        break;
-                    case SDLK_KP2:
-                        pcount = TTF_RenderText_Solid( font, "2", textColor );
-                        break;
-                    case SDLK_ESCAPE:
-                        quit=true;
-                        break;
-                    case SDLK_UP:
-                    if (cursorl.y > HAUTEUR_FENETRE/4)
-                        cursorl.y -= (HAUTEUR_FENETRE/4);
-                    else
-                        cursorl.y = (HAUTEUR_FENETRE/4);
-                    break;
-                    case SDLK_DOWN:
-                    if (cursorl.y < HAUTEUR_FENETRE*3/4)
-                        cursorl.y += (HAUTEUR_FENETRE/4);
-                    else
-                        cursorl.y = (HAUTEUR_FENETRE*3/4);
-                    break;
-                    case SDLK_RETURN:
-                    break;
-                }
-            }
-        }
-    }
+    launchd = TTF_RenderText_Solid( font, "mlolVS", textColord );
+    land= TTF_RenderText_Solid( font, "testDeck", textColord );
+    optd= TTF_RenderText_Solid( font, "Options", textColord );
+    cursord = TTF_RenderText_Solid( font, "=", textColord );
 }
 
-void Deck::show(int a, int b, int c)
+void Deck::loop(SDL_Surface *screen, SDL_Surface *background,SDL_Event event)
+{
+      SDL_Flip( screen );
+
+
+      SDL_BlitSurface( background, NULL, screen, &bg );
+        SDL_BlitSurface( launchd, NULL, screen, &launchos );
+        SDL_BlitSurface( land, NULL, screen, &lanos );
+        SDL_BlitSurface( optd, NULL, screen, &optos );
+        SDL_BlitSurface( cursord, NULL, screen, &cursorl );
+}
+
+void Deck::show(SDL_Surface *screen, SDL_Surface *background,SDL_Event event)
 {
     /*
     //Mouvement

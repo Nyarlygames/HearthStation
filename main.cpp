@@ -131,8 +131,8 @@ bool load_files()
     background = load_image("img/background.png" );
 
     //Ouverture du font
-    font = TTF_OpenFont( "Gore Font II.ttf", 28 );
-    font2 = TTF_OpenFont( "brutal-tooth.ttf", 28 );
+    font = TTF_OpenFont( "CaslonBold.ttf", 30 );
+    font2 = TTF_OpenFont( "CaslonBold.ttf", 30 );
 
     //si il y a un probleme au chargement du fond
     if( background == NULL )
@@ -265,13 +265,17 @@ int selection(int from){
                 }
             break;
         case 2 :
-            deck = new Deck(event);
+            deck = new Deck();
+
+                    SDL_Flip(screen);
+                    SDL_BlitSurface( background, NULL, screen, &bg );
+                    SDL_BlitSurface( pcount, NULL, screen, &cursorl );
             break;
         default:
             while (quit == false)
                                 {
                     SDL_Flip(screen);
-                    SDL_BlitSurface( background, NULL, screen, &bg );
+                   // SDL_BlitSurface( background, NULL, screen, &bg );
                     SDL_BlitSurface( pcount, NULL, screen, &cursorl );
                     while( SDL_PollEvent( &event ) )
                     {
@@ -282,46 +286,8 @@ int selection(int from){
                             break;
                             case SDL_KEYDOWN:
                             switch (event.key.keysym.sym)
-                            {/*
-                                case SDLK_KP0:
-                                    pcount = TTF_RenderText_Solid( font, "0", textColor );*/
-                                    break;
-                                case SDLK_KP1:
-                                    pcount = TTF_RenderText_Solid( font, "1", textColor );
-                                    nbplayers = 1;
-                                    break;
-                                case SDLK_KP2:
-                                    pcount = TTF_RenderText_Solid( font, "2", textColor );
-                                    nbplayers = 2;
-                                    break;
-                                case SDLK_KP3:
-                                    pcount = TTF_RenderText_Solid( font, "3", textColor );
-                                    nbplayers = 3;
-                                    break;
-                                case SDLK_KP4:
-                                    pcount = TTF_RenderText_Solid( font, "4", textColor );
-                                    nbplayers = 4;
-                                    break;
-                                case SDLK_KP5:
-                                    pcount = TTF_RenderText_Solid( font, "5", textColor );
-                                    nbplayers = 5;
-                                    break;
-                                case SDLK_KP6:
-                                    pcount = TTF_RenderText_Solid( font, "6", textColor );
-                                    nbplayers = 6;
-                                    break;
-                                case SDLK_KP7:
-                                    pcount = TTF_RenderText_Solid( font, "7", textColor );
-                                    nbplayers = 7;
-                                    break;
-                                case SDLK_KP8:
-                                    pcount = TTF_RenderText_Solid( font, "8", textColor );
-                                    nbplayers = 8;
-                                    break;
-                                case SDLK_KP9:
-                                    pcount = TTF_RenderText_Solid( font, "9", textColor );
-                                    nbplayers = 9;
-                                    break;
+                            {
+                                SDL_FreeSurface(background);
                                 break;
                                 case SDLK_ESCAPE:
                                 quit=true;
@@ -593,7 +559,7 @@ int game(int nbplayers)
         DrawGL(ecran);
 
         if (deck != NULL) {
-            deck->loop(screen, background);
+            deck->loop(screen, background,event);
         }
 
         stop_time = SDL_GetTicks();

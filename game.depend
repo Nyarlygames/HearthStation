@@ -356,11 +356,11 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
-1381765226 source:c:\users\nyarlytv\documents\github\hearthstation\bmp.cpp
+1381761626 source:c:\users\nyarlytv\documents\github\hearthstation\bmp.cpp
 	<fstream>
 	"include/bmp.h"
 
-1381765232 source:c:\users\nyarlytv\documents\github\hearthstation\ens.cpp
+1381761632 source:c:\users\nyarlytv\documents\github\hearthstation\ens.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	<GL/gl.h>
@@ -369,12 +369,12 @@
 	<string>
 	"include/ens.h"
 
-1381765234 source:c:\users\nyarlytv\documents\github\hearthstation\freeflycamera.cpp
+1381761634 source:c:\users\nyarlytv\documents\github\hearthstation\freeflycamera.cpp
 	"include/freeflycamera.h"
 	<cmath>
 	<GL/glu.h>
 
-1381767020 source:c:\users\nyarlytv\documents\github\hearthstation\game.cpp
+1381763420 source:c:\users\nyarlytv\documents\github\hearthstation\game.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	<GL/gl.h>
@@ -384,7 +384,7 @@
 	"include/Game.h"
 	"include/player.h"
 
-1381769867 source:c:\users\nyarlytv\documents\github\hearthstation\main.cpp
+1381791864 source:c:\users\nyarlytv\documents\github\hearthstation\main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
@@ -402,7 +402,7 @@
 	"include/game.h"
 	"include/deck.h"
 
-1381765432 source:c:\users\nyarlytv\documents\github\hearthstation\md2.cpp
+1381761832 source:c:\users\nyarlytv\documents\github\hearthstation\md2.cpp
 	<GL/glut.h>
 	<fstream>
 	"include/md2.h"
@@ -410,11 +410,11 @@
 	"include/anorms.h"
 	"include/anormtab.h"
 
-1381765409 source:c:\users\nyarlytv\documents\github\hearthstation\pcx.cpp
+1381761809 source:c:\users\nyarlytv\documents\github\hearthstation\pcx.cpp
 	<fstream>
 	"include/pcx.h"
 
-1381769200 source:c:\users\nyarlytv\documents\github\hearthstation\player.cpp
+1381765600 source:c:\users\nyarlytv\documents\github\hearthstation\player.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	<GL/gl.h>
@@ -425,14 +425,14 @@
 	"include/player.h"
 	"include/md2.h"
 
-1381768565 source:c:\users\nyarlytv\documents\github\hearthstation\scene.cpp
+1381764965 source:c:\users\nyarlytv\documents\github\hearthstation\scene.cpp
 	"include/scene.h"
 	<GL/gl.h>
 	<GL/glu.h>
 	"include/ens.h"
 	"include/sdlglutils.h"
 
-1381765484 source:c:\users\nyarlytv\documents\github\hearthstation\sdlglutils.cpp
+1381761884 source:c:\users\nyarlytv\documents\github\hearthstation\sdlglutils.cpp
 	"include/sdlglutils.h"
 	<SDL/SDL.h>
 	<SDL/SDL_image.h>
@@ -440,71 +440,71 @@
 	<cstring>
 	<cstdlib>
 
-1366917048 source:c:\users\nyarlytv\documents\github\hearthstation\sound.cpp
+1366913448 source:c:\users\nyarlytv\documents\github\hearthstation\sound.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_mixer.h"
 	<string>
 
-1381765428 source:c:\users\nyarlytv\documents\github\hearthstation\texture.cpp
+1381761828 source:c:\users\nyarlytv\documents\github\hearthstation\texture.cpp
 	<GL/glut.h>
 	"include/texture.h"
 	"include/bmp.h"
 	"include/tga.h"
 	"include/pcx.h"
 
-1381765420 source:c:\users\nyarlytv\documents\github\hearthstation\tga.cpp
+1381761820 source:c:\users\nyarlytv\documents\github\hearthstation\tga.cpp
 	<fstream>
 	"include/tga.h"
 
-1381765490 source:c:\users\nyarlytv\documents\github\hearthstation\vector3d.cpp
+1381761890 source:c:\users\nyarlytv\documents\github\hearthstation\vector3d.cpp
 	"include/vector3d.h"
 	<cmath>
 
-1042582546 c:\users\nyarlytv\documents\github\hearthstation\include\bmp.h
+1042578946 c:\users\nyarlytv\documents\github\hearthstation\include\bmp.h
 	<windows.h>
 
-1367101785 c:\users\nyarlytv\documents\github\hearthstation\include\sdlglutils.h
+1367098185 c:\users\nyarlytv\documents\github\hearthstation\include\sdlglutils.h
 	<GL/gl.h>
 	<SDL/SDL.h>
 
-1367102199 c:\users\nyarlytv\documents\github\hearthstation\include\ens.h
+1367098599 c:\users\nyarlytv\documents\github\hearthstation\include\ens.h
 	"md2.h"
 
-1367107227 c:\users\nyarlytv\documents\github\hearthstation\include\md2.h
+1367103627 c:\users\nyarlytv\documents\github\hearthstation\include\md2.h
 
-1366917048 c:\users\nyarlytv\documents\github\hearthstation\include\freeflycamera.h
+1366913448 c:\users\nyarlytv\documents\github\hearthstation\include\freeflycamera.h
 	"vector3d.h"
 	<SDL/SDL.h>
 	<map>
 	<string>
 
-1366917048 c:\users\nyarlytv\documents\github\hearthstation\include\vector3d.h
+1366913448 c:\users\nyarlytv\documents\github\hearthstation\include\vector3d.h
 
-1367080818 c:\users\nyarlytv\documents\github\hearthstation\include\game.h
+1367077218 c:\users\nyarlytv\documents\github\hearthstation\include\game.h
 	"player.h"
 
-1381768509 c:\users\nyarlytv\documents\github\hearthstation\include\player.h
+1381764909 c:\users\nyarlytv\documents\github\hearthstation\include\player.h
 
-1366917048 c:\users\nyarlytv\documents\github\hearthstation\include\scene.h
+1366913448 c:\users\nyarlytv\documents\github\hearthstation\include\scene.h
 
-1366917048 c:\users\nyarlytv\documents\github\hearthstation\include\sound.h
+1366913448 c:\users\nyarlytv\documents\github\hearthstation\include\sound.h
 
-1381768575 c:\users\nyarlytv\documents\github\hearthstation\include\global.h
+1381764975 c:\users\nyarlytv\documents\github\hearthstation\include\global.h
 
-1042480006 c:\users\nyarlytv\documents\github\hearthstation\include\texture.h
+1042476406 c:\users\nyarlytv\documents\github\hearthstation\include\texture.h
 	<list>
 	<string>
 
-1042480244 c:\users\nyarlytv\documents\github\hearthstation\include\anorms.h
+1042476644 c:\users\nyarlytv\documents\github\hearthstation\include\anorms.h
 
-1042480246 c:\users\nyarlytv\documents\github\hearthstation\include\anormtab.h
+1042476646 c:\users\nyarlytv\documents\github\hearthstation\include\anormtab.h
 
-1042582546 c:\users\nyarlytv\documents\github\hearthstation\include\pcx.h
+1042578946 c:\users\nyarlytv\documents\github\hearthstation\include\pcx.h
 
-1042582550 c:\users\nyarlytv\documents\github\hearthstation\include\tga.h
+1042578950 c:\users\nyarlytv\documents\github\hearthstation\include\tga.h
 	<windows.h>
 
-1381769714 source:c:\users\nyarlytv\documents\github\hearthstation\deck.cpp
+1386123226 source:c:\users\nyarlytv\documents\github\hearthstation\deck.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -515,6 +515,6 @@
 	"include/Deck.h"
 	"include/player.h"
 
-1381769054 c:\users\nyarlytv\documents\github\hearthstation\include\deck.h
+1381771979 c:\users\nyarlytv\documents\github\hearthstation\include\deck.h
 	"player.h"
 

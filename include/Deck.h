@@ -5,15 +5,14 @@
 class Deck
 {
     public:
-        SDL_Event event2;
     //Le constructeur permettant l'initialisation des variables
-    Deck(SDL_Event event);
+    Deck();
 
-    void loop(SDL_Surface *screen, SDL_Surface *background);
+    void loop(SDL_Surface *screen, SDL_Surface *background, SDL_Event event);
 
     //montrer le personnage
 
-    void show(int a, int b, int c);
+    void show(SDL_Surface *screen, SDL_Surface *background,SDL_Event event);
 };
 
 #endif //Deck_H

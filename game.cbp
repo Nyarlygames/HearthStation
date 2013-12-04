@@ -7,7 +7,7 @@
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="default">
-				<Option output="brutalgore.exe" prefix_auto="0" extension_auto="0" />
+				<Option output="HearthStation.exe" prefix_auto="0" extension_auto="0" />
 				<Option type="0" />
 				<Option compiler="gcc" />
 				<Option projectResourceIncludeDirsRelation="0" />
@@ -27,37 +27,43 @@
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\SDL_mixer.lib" />
 			<Add library="C:\Program Files (x86)\CodeBlocks\MinGW\lib\SDL_ttf.lib" />
 		</Linker>
+		<Unit filename="Deck.cpp" />
 		<Unit filename="Game.cpp" />
-		<Unit filename="Game.h" />
-		<Unit filename="anorms.h" />
-		<Unit filename="anormtab.h" />
 		<Unit filename="bmp.cpp" />
-		<Unit filename="bmp.h" />
 		<Unit filename="ens.cpp" />
-		<Unit filename="ens.h" />
 		<Unit filename="freeflycamera.cpp" />
-		<Unit filename="freeflycamera.h" />
-		<Unit filename="global.h" />
+		<Unit filename="include/Deck.h" />
+		<Unit filename="include/Game.h" />
+		<Unit filename="include/anorms.h" />
+		<Unit filename="include/anormtab.h" />
+		<Unit filename="include/bmp.h" />
+		<Unit filename="include/ens.h" />
+		<Unit filename="include/freeflycamera.h" />
+		<Unit filename="include/global.h" />
+		<Unit filename="include/glut.h" />
+		<Unit filename="include/md2.h" />
+		<Unit filename="include/move.h" />
+		<Unit filename="include/pcx.h" />
+		<Unit filename="include/player.h" />
+		<Unit filename="include/scene.h" />
+		<Unit filename="include/sdlglutils.h" />
+		<Unit filename="include/sound.h" />
+		<Unit filename="include/struct.h" />
+		<Unit filename="include/texture.h" />
+		<Unit filename="include/tff.h" />
+		<Unit filename="include/tga.h" />
+		<Unit filename="include/timer.h" />
+		<Unit filename="include/vector3d.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="md2.cpp" />
-		<Unit filename="md2.h" />
 		<Unit filename="pcx.cpp" />
-		<Unit filename="pcx.h" />
 		<Unit filename="player.cpp" />
-		<Unit filename="player.h" />
 		<Unit filename="scene.cpp" />
-		<Unit filename="scene.h" />
 		<Unit filename="sdlglutils.cpp" />
-		<Unit filename="sdlglutils.h" />
 		<Unit filename="sound.cpp" />
-		<Unit filename="sound.h" />
 		<Unit filename="texture.cpp" />
-		<Unit filename="texture.h" />
 		<Unit filename="tga.cpp" />
-		<Unit filename="tga.h" />
-		<Unit filename="timer.h" />
 		<Unit filename="vector3d.cpp" />
-		<Unit filename="vector3d.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
