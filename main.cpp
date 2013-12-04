@@ -275,10 +275,16 @@ int selection(int from){
 
                     SDL_Surface *test = NULL;
                     SDL_Surface *card1 = NULL;
+                    SDL_Surface *card1low = NULL;
                     test=load_image("img/test.png" );
                     card1=IMG_Load("img/cards/1.png" );
+                    card1low=IMG_Load("img/cards/lowres/1.png" );
+
+                    card1low->h = 100;
+                    card1low->w = 100;
+
                     if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )                    {                        return false;                    }
-                    screen = SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_SWSURFACE );
+                    screen = SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_RESIZABLE );
 
                     if( screen == NULL )                    {                        return false;    }
                     if( TTF_Init() == -1 )       {   return false;                    }
@@ -288,7 +294,7 @@ int selection(int from){
                     SDL_Flip(screen);
                     SDL_BlitSurface(test, NULL, screen, &bg);
                     SDL_BlitSurface(card1, NULL, screen, &cursorl);
-
+                    SDL_BlitSurface(card1low, NULL, screen, &bg);
                     while( SDL_PollEvent( &event ) )
                     {
                           switch(event.type)
