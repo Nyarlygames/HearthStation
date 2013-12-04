@@ -384,7 +384,7 @@
 	"include/Game.h"
 	"include/player.h"
 
-1381791864 source:c:\users\nyarlytv\documents\github\hearthstation\main.cpp
+1386124145 source:c:\users\nyarlytv\documents\github\hearthstation\main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>

@@ -272,11 +272,23 @@ int selection(int from){
                     SDL_BlitSurface( pcount, NULL, screen, &cursorl );
             break;
         default:
+
+                    SDL_Surface *test = NULL;
+                    SDL_Surface *card1 = NULL;
+                    test=load_image("img/test.png" );
+                    card1=IMG_Load("img/cards/1.png" );
+                    if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )                    {                        return false;                    }
+                    screen = SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_SWSURFACE );
+
+                    if( screen == NULL )                    {                        return false;    }
+                    if( TTF_Init() == -1 )       {   return false;                    }
+                    SDL_WM_SetCaption( "HearthStation", NULL );
             while (quit == false)
                                 {
                     SDL_Flip(screen);
-                   // SDL_BlitSurface( background, NULL, screen, &bg );
-                    SDL_BlitSurface( pcount, NULL, screen, &cursorl );
+                    SDL_BlitSurface(test, NULL, screen, &bg);
+                    SDL_BlitSurface(card1, NULL, screen, &cursorl);
+
                     while( SDL_PollEvent( &event ) )
                     {
                           switch(event.type)
@@ -287,7 +299,6 @@ int selection(int from){
                             case SDL_KEYDOWN:
                             switch (event.key.keysym.sym)
                             {
-                                SDL_FreeSurface(background);
                                 break;
                                 case SDLK_ESCAPE:
                                 quit=true;
