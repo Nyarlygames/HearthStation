@@ -267,6 +267,9 @@ int selection(int from){
             break;
         case 2 :
             deck = new Deck(screen);
+            SDL_FreeSurface(background);
+            SDL_FreeSurface(cursor);
+            cursor = NULL;
             background = IMG_Load("img/deck.png");
             break;
         default:
@@ -405,7 +408,8 @@ int main( int argc, char* args[] )
         SDL_BlitSurface( launch, NULL, screen, &launchos );
         SDL_BlitSurface( lan, NULL, screen, &lanos );
         SDL_BlitSurface( opt, NULL, screen, &optos );
-        SDL_BlitSurface( cursor, NULL, screen, &cursorl );
+        if (cursor != NULL)
+            SDL_BlitSurface( cursor, NULL, screen, &cursorl );
         //tant qu'il y a un evenement dans le handler
         while( SDL_PollEvent( &event ) )
         {
