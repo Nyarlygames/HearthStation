@@ -1,12 +1,16 @@
 #ifndef Deck_H
 #define Deck_H
-#include "player.h"
+#include "Collection.h"
 
 class Deck
 {
     public:
         SDL_Surface *screen;
-    //Le constructeur permettant l'initialisation des variables
+        Collection *allset;
+        SDL_Surface *cursord = NULL;
+        SDL_Rect cursorl;
+        SDL_Surface *bgd = NULL;
+
     Deck(SDL_Surface *window);
 
     void loop();

@@ -16,6 +16,7 @@
 #include "include/game.h"
 #include "include/deck.h"
 #include "include/card.h"
+#include "include/Collection.h"
 
 #define FPS 50
 #define LARGEUR_FENETRE 800
@@ -41,6 +42,7 @@ Deck *deck = NULL;
 //Le font qu'on va utiliser
 TTF_Font *font;
 TTF_Font *font2;
+int state = 0;
 
 //La couleur du font-
 SDL_Color textColor = { 200, 0, 0 };
@@ -267,10 +269,52 @@ int selection(int from){
             break;
         case 2 :
             deck = new Deck(screen);
-            SDL_FreeSurface(background);
+          //  SDL_FreeSurface(background);
             SDL_FreeSurface(cursor);
             cursor = NULL;
-            background = IMG_Load("img/deck.png");
+            state = 1;
+            while (quit == false) {
+                    deck->loop();
+                    while( SDL_PollEvent( &event ) )
+                    {
+                          switch(event.type)
+                        {
+                            case SDL_QUIT:
+                                quit = true;
+                            break;
+                            case SDL_KEYDOWN:
+                            switch (event.key.keysym.sym)
+                            {
+                                case SDLK_ESCAPE:
+                                quit=true;
+                                break;
+                                case SDLK_UP:
+                                    SDL_FreeSurface(deck->bgd);
+                                    deck->bgd = IMG_Load("img/test.png");
+                                    if (deck->cursorl.y > HAUTEUR_FENETRE/4)
+                                        deck->cursorl.y -= (HAUTEUR_FENETRE/4);
+                                    else
+                                        deck->cursorl.y = (HAUTEUR_FENETRE/4);
+                                break;
+                                case SDLK_DOWN:
+                                    SDL_FreeSurface(deck->bgd);
+                                    deck->bgd = IMG_Load("img/deck.png");
+                                    if (deck->cursorl.y < HAUTEUR_FENETRE*3/4)
+                                        deck->cursorl.y += (HAUTEUR_FENETRE/4);
+                                    else
+                                        deck->cursorl.y = (HAUTEUR_FENETRE*3/4);
+                                break;
+                                case SDLK_RETURN:
+                                if (cursorl.y == HAUTEUR_FENETRE/4)
+                                {
+                                   game(nbplayers);
+                                }
+                                break;
+                            }
+                        }
+                    }
+            }
+            state = 0;
             break;
         default:
 
@@ -403,14 +447,15 @@ int main( int argc, char* args[] )
     while( quit == false )
     {
         SDL_Flip(screen);
+        if (state == 0) {
         if (background != NULL)
             SDL_BlitSurface( background, NULL, screen, &bg );
         SDL_BlitSurface( launch, NULL, screen, &launchos );
         SDL_BlitSurface( lan, NULL, screen, &lanos );
         SDL_BlitSurface( opt, NULL, screen, &optos );
+        }
         if (cursor != NULL)
             SDL_BlitSurface( cursor, NULL, screen, &cursorl );
-        //tant qu'il y a un evenement dans le handler
         while( SDL_PollEvent( &event ) )
         {
               switch(event.type)
@@ -426,16 +471,16 @@ int main( int argc, char* args[] )
                     quit=true;
                     break;
                     case SDLK_UP:
-                    if (cursorl.y > HAUTEUR_FENETRE/4)
-                        cursorl.y -= (HAUTEUR_FENETRE/4);
-                    else
-                        cursorl.y = (HAUTEUR_FENETRE/4);
+                            if (cursorl.y > HAUTEUR_FENETRE/4)
+                                cursorl.y -= (HAUTEUR_FENETRE/4);
+                            else
+                                cursorl.y = (HAUTEUR_FENETRE/4);
                     break;
                     case SDLK_DOWN:
-                    if (cursorl.y < HAUTEUR_FENETRE*3/4)
-                        cursorl.y += (HAUTEUR_FENETRE/4);
-                    else
-                        cursorl.y = (HAUTEUR_FENETRE*3/4);
+                            if (cursorl.y < HAUTEUR_FENETRE*3/4)
+                                cursorl.y += (HAUTEUR_FENETRE/4);
+                            else
+                                cursorl.y = (HAUTEUR_FENETRE*3/4);
                     break;
                     case SDLK_RETURN:
                     if (cursorl.y == HAUTEUR_FENETRE/4)
