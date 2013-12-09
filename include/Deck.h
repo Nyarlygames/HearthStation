@@ -1,12 +1,14 @@
 #ifndef Deck_H
 #define Deck_H
 #include "Collection.h"
+#include "Set.h"
 
 class Deck
 {
     public:
         SDL_Surface *screen;
         Collection *allset;
+        Set *base;
         SDL_Surface *cursord = NULL;
         SDL_Rect cursorl;
         SDL_Surface *bgd = NULL;

@@ -384,13 +384,14 @@
 	"include/Game.h"
 	"include/player.h"
 
-1386178595 source:c:\users\nyarlytv\documents\github\hearthstation\main.cpp
+1386603820 source:c:\users\nyarlytv\documents\github\hearthstation\main.cpp
 	<SDL/SDL.h>
 	<GL/gl.h>
 	<GL/glu.h>
 	<cstdlib>
 	<cmath>
 	<string>
+	<sstream>
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
 	"include/sdlglutils.h"
@@ -506,7 +507,7 @@
 1042578950 c:\users\nyarlytv\documents\github\hearthstation\include\tga.h
 	<windows.h>
 
-1386178577 source:c:\users\nyarlytv\documents\github\hearthstation\deck.cpp
+1386603922 source:c:\users\nyarlytv\documents\github\hearthstation\deck.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -515,12 +516,15 @@
 	"include/sdlglutils.h"
 	<string>
 	"include/Deck.h"
+	"include/Set.h"
+	"include/Card.h"
 	"include/player.h"
 
-1386173574 c:\users\nyarlytv\documents\github\hearthstation\include\deck.h
+1386595314 c:\users\nyarlytv\documents\github\hearthstation\include\deck.h
 	"Collection.h"
+	"Set.h"
 
-1386201263 source:c:\users\nyarlytv\documents\github\hearthstation\card.cpp
+1386603629 source:c:\users\nyarlytv\documents\github\hearthstation\card.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -530,10 +534,11 @@
 	<string>
 	"include/Card.h"
 	"include/player.h"
+	<sstream>
 
-1386201185 c:\users\nyarlytv\documents\github\hearthstation\include\card.h
+1386603616 c:\users\nyarlytv\documents\github\hearthstation\include\card.h
 
-1386171550 source:c:\users\nyarlytv\documents\github\hearthstation\collection.cpp
+1386603872 source:c:\users\nyarlytv\documents\github\hearthstation\collection.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -542,6 +547,27 @@
 	"include/sdlglutils.h"
 	<string>
 	"include/Collection.h"
+	"include/Card.h"
 
-1386171400 c:\users\nyarlytv\documents\github\hearthstation\include\collection.h
+1386603856 c:\users\nyarlytv\documents\github\hearthstation\include\collection.h
+	"Card.h"
+
+1386597713 c:\users\nyarlytv\documents\github\hearthstation\include\set.h
+	<string>
+	"Card.h"
+
+1386603825 source:c:\users\nyarlytv\documents\github\hearthstation\set.cpp
+	"SDL/SDL.h"
+	"SDL/SDL_image.h"
+	"SDL/SDL_ttf.h"
+	<GL/gl.h>
+	<GL/glu.h>
+	"include/sdlglutils.h"
+	"include/Set.h"
+	"include/Card.h"
+	<iostream>
+	<fstream>
+	<stdio.h>
+	<stdlib.h>
+	<string>
 

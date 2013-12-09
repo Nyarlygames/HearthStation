@@ -31,6 +31,7 @@
 		<Unit filename="Collection.cpp" />
 		<Unit filename="Deck.cpp" />
 		<Unit filename="Game.cpp" />
+		<Unit filename="Set.cpp" />
 		<Unit filename="bmp.cpp" />
 		<Unit filename="ens.cpp" />
 		<Unit filename="freeflycamera.cpp" />
@@ -38,6 +39,7 @@
 		<Unit filename="include/Collection.h" />
 		<Unit filename="include/Deck.h" />
 		<Unit filename="include/Game.h" />
+		<Unit filename="include/Set.h" />
 		<Unit filename="include/anorms.h" />
 		<Unit filename="include/anormtab.h" />
 		<Unit filename="include/bmp.h" />

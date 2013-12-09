@@ -8,6 +8,8 @@
 #include "include/sdlglutils.h"
 #include <string>
 #include "include/Deck.h"
+#include "include/Set.h"
+#include "include/Card.h"
 #include "include/player.h"
 
 #define FPS 50
@@ -26,6 +28,7 @@ SDL_Surface *launchd = NULL;
 SDL_Surface *land = NULL;
 SDL_Surface *optd = NULL;
 
+
 SDL_Color textColord = { 200, 0, 0 };
 Deck::Deck(SDL_Surface *window){
     bool quit = false;
@@ -40,14 +43,14 @@ Deck::Deck(SDL_Surface *window){
     lanos.y = HAUTEUR_FENETRE*2/4;
     optos.x = 50;
     optos.y = HAUTEUR_FENETRE*3/4;
-   // allset = new Collection();
+    allset = new Collection(screen);
+   // base = new Set("BaseSet.col", screen);
     bg.x = 0;
     bg.y = 0;
     cursorl.x = 20;
     cursorl.y = HAUTEUR_FENETRE/4;
     TTF_Font *font;
     font = TTF_OpenFont( "CaslonBold.ttf", 30 );
-
     bgd = IMG_Load("img/deck.png");
     launchd = TTF_RenderText_Solid( font, "mlolVS", textColord );
     land= TTF_RenderText_Solid( font, "testDeck", textColord );
@@ -59,13 +62,15 @@ void Deck::loop()
 {
       SDL_Flip( screen );
 
-
         SDL_BlitSurface( bgd, NULL, screen, &bg );
         SDL_BlitSurface( launchd, NULL, screen, &launchos );
         SDL_BlitSurface( land, NULL, screen, &lanos );
         SDL_BlitSurface( optd, NULL, screen, &optos );
         SDL_BlitSurface( cursord, NULL, screen, &cursorl );
-
+        allset->c->loop();
+       // if (base != NULL)
+      //      if (base->c != NULL)
+       //     base->c->loop();
 }
 
 void Deck::show(SDL_Surface *screen, SDL_Surface *background,SDL_Event event)

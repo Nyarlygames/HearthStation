@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <cmath>
 #include <string>
+#include <sstream>
 
 #include "SDL/SDL_image.h"
 #include "SDL/SDL_ttf.h"
@@ -321,17 +322,16 @@ int selection(int from){
         default:
 
                     SDL_Surface *test = NULL;
-                    Card *card;
                     SDL_Surface *card1 = NULL;
                     SDL_Surface *card1low = NULL;
                     test=load_image("img/test.png" );
                     card1=IMG_Load("img/cards/1.png" );
-                    card1low=IMG_Load("img/cards/lowres/1.png" );
+                    char *id;
+                    id = (char *) malloc(sizeof(int));
+                    card1low=IMG_Load("img/cards/1.png" );
 
                     card1low->h = 100;
                     card1low->w = 100;
-                    card = new Card();
-                    card->onscreen = screen;
 
                     if( SDL_Init( SDL_INIT_EVERYTHING ) == -1 )                    {                        return false;                    }
                     screen = SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_RESIZABLE );
@@ -345,7 +345,6 @@ int selection(int from){
                     SDL_BlitSurface(test, NULL, screen, &bg);
                     SDL_BlitSurface(card1, NULL, screen, &cursorl);
                     SDL_BlitSurface(card1low, NULL, screen, &bg);
-                    card->loop(screen);
                     while( SDL_PollEvent( &event ) )
                     {
                           switch(event.type)
