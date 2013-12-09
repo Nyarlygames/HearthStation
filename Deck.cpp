@@ -67,7 +67,8 @@ void Deck::loop()
         SDL_BlitSurface( land, NULL, screen, &lanos );
         SDL_BlitSurface( optd, NULL, screen, &optos );
         SDL_BlitSurface( cursord, NULL, screen, &cursorl );
-        allset->c->loop();
+        allset->col[0]->loop();
+        allset->col[1]->loop();
        // if (base != NULL)
       //      if (base->c != NULL)
        //     base->c->loop();

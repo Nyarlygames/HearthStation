@@ -507,7 +507,7 @@
 1042578950 c:\users\nyarlytv\documents\github\hearthstation\include\tga.h
 	<windows.h>
 
-1386603922 source:c:\users\nyarlytv\documents\github\hearthstation\deck.cpp
+1386604815 source:c:\users\nyarlytv\documents\github\hearthstation\deck.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -524,7 +524,7 @@
 	"Collection.h"
 	"Set.h"
 
-1386603629 source:c:\users\nyarlytv\documents\github\hearthstation\card.cpp
+1386604766 source:c:\users\nyarlytv\documents\github\hearthstation\card.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -538,7 +538,7 @@
 
 1386603616 c:\users\nyarlytv\documents\github\hearthstation\include\card.h
 
-1386603872 source:c:\users\nyarlytv\documents\github\hearthstation\collection.cpp
+1386604799 source:c:\users\nyarlytv\documents\github\hearthstation\collection.cpp
 	"SDL/SDL.h"
 	"SDL/SDL_image.h"
 	"SDL/SDL_ttf.h"
@@ -549,7 +549,7 @@
 	"include/Collection.h"
 	"include/Card.h"
 
-1386603856 c:\users\nyarlytv\documents\github\hearthstation\include\collection.h
+1386604441 c:\users\nyarlytv\documents\github\hearthstation\include\collection.h
 	"Card.h"
 
 1386597713 c:\users\nyarlytv\documents\github\hearthstation\include\set.h

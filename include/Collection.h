@@ -7,7 +7,7 @@
 class Collection
 {
     public:
-        Card *c;
+        Card **col;
         SDL_Surface *screen;
 
     Collection(SDL_Surface *s);
