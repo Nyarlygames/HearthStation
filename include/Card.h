@@ -5,6 +5,12 @@ class Card
 {
     public:
         SDL_Surface *onscreen;
+        SDL_Surface *img;
+        char        *text;
+        char        *name;
+        int         mana;
+        char        *type;
+
     Card();
 
     void loop(SDL_Surface *screen);

@@ -52,7 +52,7 @@ Deck::Deck(SDL_Surface *window){
     launchd = TTF_RenderText_Solid( font, "mlolVS", textColord );
     land= TTF_RenderText_Solid( font, "testDeck", textColord );
     optd= TTF_RenderText_Solid( font, "Options", textColord );
-    cursord = TTF_RenderText_Solid( font, "=", textColord );
+    cursord = TTF_RenderText_Solid( font, "+", textColord );
 }
 
 void Deck::loop()

@@ -315,6 +315,8 @@ int selection(int from){
                     }
             }
             state = 0;
+            SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_SWSURFACE );
+            cursor = TTF_RenderText_Solid( font2, "-", textColor );
             break;
         default:
 
@@ -380,7 +382,7 @@ int selection(int from){
                         }
                     }
                 }
-
+                screen = SDL_SetVideoMode( LARGEUR_FENETRE, HAUTEUR_FENETRE, SCREEN_BPP, SDL_SWSURFACE );
             break;
     }
     return (0);
